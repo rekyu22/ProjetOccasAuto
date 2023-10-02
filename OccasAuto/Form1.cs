@@ -11,53 +11,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace OccasAuto
 {
     public partial class Submit : Form
     {
 
-        List<Concessionaire> LesConces = new List<Concessionaire>();
+
 
 
         public Submit()
         {
             InitializeComponent();
-            PrintConces();
+            PrintConces("","");
+            comboBox1.Text = "Ville";
         }
 
-        public void PrintConces()
+        private void PrintConces(string select, string cond)
         {
-            MySqlConnection cnx = new MySqlConnection();
-            cnx.ConnectionString = "SERVER=localhost;DATABASE=bdoccasauto;UID=root;";
-            cnx.Open();
-            string request = "SELECT idConces, nom, prenom, adresse, codePostal, ville FROM concessionaire;";
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = cnx;
-            cmd.CommandText = request;
-            //cmd.Parameters.Add("@ville", MySqlDbType.String);
-            //cmd.Parameters["@ville"].Value = "RIOM";
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-
-                Concessionaire unConces = new Concessionaire((int)reader["idConces"], reader["nom"].ToString(), reader["prenom"].ToString(), reader["adresse"].ToString(), reader["codePostal"].ToString(), reader["ville"].ToString());
-                LesConces.Add(unConces);
-
-                var list = new ListViewItem();
-                list.SubItems.Add(unConces.IdConces.ToString());
-                list.SubItems.Add(unConces.Nom);
-                list.SubItems.Add(unConces.Prenom);
-                list.SubItems.Add(unConces.Adresse);
-                list.SubItems.Add(unConces.CodePostal);
-                list.SubItems.Add(unConces.Ville);
-                listViewAuto.Items.Add(list);
+            List<Concessionaire> LesCons = Concessionaire.Rechercher(select, cond);
+            listViewAuto.Items.Clear();
+            foreach (Concessionaire unConces in LesCons)
+            {   
+                
+                string[] str = { unConces.IdConces.ToString(), unConces.Nom, unConces.Prenom, unConces.Adresse, unConces.CodePostal, unConces.Ville };
+                var sd = new ListViewItem(str);
+                listViewAuto.Items.Add(sd);
             }
-
-
             
-            cnx.Close();
-            reader.Close();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -72,6 +54,18 @@ namespace OccasAuto
 
         private void Submit_Load(object sender, EventArgs e)
         {
+
+        }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrintConces(comboBox1.Text, textBox1.Text);
 
         }
     }
