@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConnexion));
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
@@ -36,6 +37,10 @@
             this.subscriptionSubmit = new System.Windows.Forms.Button();
             this.subscription = new System.Windows.Forms.Label();
             this.hideLabel = new System.Windows.Forms.Label();
+            this.minimBox = new System.Windows.Forms.PictureBox();
+            this.closeBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.minimBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBox)).BeginInit();
             this.SuspendLayout();
             // 
             // idTextBox
@@ -51,6 +56,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(173, 20);
             this.passwordTextBox.TabIndex = 1;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // idLabel
             // 
@@ -100,6 +106,7 @@
             this.subscription.Size = new System.Drawing.Size(55, 13);
             this.subscription.TabIndex = 7;
             this.subscription.Text = "Inscription";
+            this.subscription.Click += new System.EventHandler(this.subscription_Click);
             // 
             // hideLabel
             // 
@@ -112,11 +119,36 @@
             this.hideLabel.Text = "+";
             this.hideLabel.Click += new System.EventHandler(this.hideLabel_Click);
             // 
+            // minimBox
+            // 
+            this.minimBox.Image = ((System.Drawing.Image)(resources.GetObject("minimBox.Image")));
+            this.minimBox.Location = new System.Drawing.Point(722, 12);
+            this.minimBox.Name = "minimBox";
+            this.minimBox.Size = new System.Drawing.Size(30, 30);
+            this.minimBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minimBox.TabIndex = 16;
+            this.minimBox.TabStop = false;
+            this.minimBox.Click += new System.EventHandler(this.minimBox_Click);
+            // 
+            // closeBox
+            // 
+            this.closeBox.Image = ((System.Drawing.Image)(resources.GetObject("closeBox.Image")));
+            this.closeBox.Location = new System.Drawing.Point(758, 12);
+            this.closeBox.Name = "closeBox";
+            this.closeBox.Size = new System.Drawing.Size(30, 30);
+            this.closeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closeBox.TabIndex = 17;
+            this.closeBox.TabStop = false;
+            this.closeBox.Click += new System.EventHandler(this.closeBox_Click);
+            // 
             // FormConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.closeBox);
+            this.Controls.Add(this.minimBox);
             this.Controls.Add(this.hideLabel);
             this.Controls.Add(this.subscription);
             this.Controls.Add(this.subscriptionSubmit);
@@ -126,8 +158,10 @@
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.idTextBox);
             this.Name = "FormConnexion";
-            this.Text = "Connexion";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.minimBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +177,8 @@
         private System.Windows.Forms.Button subscriptionSubmit;
         private System.Windows.Forms.Label subscription;
         private System.Windows.Forms.Label hideLabel;
+        private System.Windows.Forms.PictureBox minimBox;
+        private System.Windows.Forms.PictureBox closeBox;
     }
 }
 

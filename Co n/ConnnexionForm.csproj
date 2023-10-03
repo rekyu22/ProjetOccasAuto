@@ -84,6 +84,10 @@
       <Project>{9746826C-B77C-4075-89CE-EAF1D85E4324}</Project>
       <Name>ClassOccasAuto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InscriptionForm\InscriptionForm.csproj">
+      <Project>{B256A311-A7DE-45F2-A299-7ED6725CAAB5}</Project>
+      <Name>InscriptionForm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OccasAuto\OccasAuto.csproj">
       <Project>{92B379F6-2FA9-49B4-85D6-70182A2F5432}</Project>
       <Name>OccasAuto</Name>

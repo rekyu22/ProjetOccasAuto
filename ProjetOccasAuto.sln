@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassOccasAuto", "ClassOcca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnnexionForm", "Co n\ConnnexionForm.csproj", "{B513C820-A41E-465C-BF41-87A4A19131DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InscriptionForm", "InscriptionForm\InscriptionForm.csproj", "{B256A311-A7DE-45F2-A299-7ED6725CAAB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B513C820-A41E-465C-BF41-87A4A19131DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B513C820-A41E-465C-BF41-87A4A19131DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B513C820-A41E-465C-BF41-87A4A19131DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B256A311-A7DE-45F2-A299-7ED6725CAAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B256A311-A7DE-45F2-A299-7ED6725CAAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B256A311-A7DE-45F2-A299-7ED6725CAAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B256A311-A7DE-45F2-A299-7ED6725CAAB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

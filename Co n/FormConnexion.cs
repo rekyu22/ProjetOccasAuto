@@ -1,4 +1,5 @@
 ﻿using ClassOccasAuto;
+using InscriptionForm;
 using OccasAuto;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,6 @@ namespace Co_n
         public FormConnexion()
         {
             InitializeComponent();
-            Connect();
         }
 
         private void Connect()
@@ -26,14 +26,21 @@ namespace Co_n
             List<Connexion> LesConnexions = Connexion.Load();
             foreach (Connexion uneConnexion in LesConnexions)
             {
-                if(uneConnexion.Identifiant == idTextBox.Text && uneConnexion.Password == passwordTextBox.Text)
+                
+                if (uneConnexion.Identifiant == idTextBox.Text && uneConnexion.Password == passwordTextBox.Text)
                 {
-                    Submit formConnexion = new Submit();
-                    formConnexion.ShowDialog();
+                    Submit formSubmit = new Submit();
+                    formSubmit.ShowDialog();                   
                 }
-                    
+
             }
 
+        }
+
+        private void Inscript()
+        {
+            FormInscription formInscript = new FormInscription();
+            formInscript.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,7 +53,6 @@ namespace Co_n
         private void subscriptionSubmit_Click(object sender, EventArgs e)
         {
             Connect();
-         
         }
 
         private void hideLabel_Click(object sender, EventArgs e)
@@ -59,8 +65,23 @@ namespace Co_n
             {
                 passwordTextBox.UseSystemPasswordChar = true;
             }
-            
 
+
+        }
+
+        private void subscription_Click(object sender, EventArgs e)
+        {
+            Inscript();
+        }
+
+        private void closeBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

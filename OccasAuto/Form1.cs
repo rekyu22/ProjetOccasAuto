@@ -66,7 +66,16 @@ namespace OccasAuto
         private void button1_Click(object sender, EventArgs e)
         {
             PrintConces(comboBox1.Text, textBox1.Text);
+        }
 
+        private void closBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

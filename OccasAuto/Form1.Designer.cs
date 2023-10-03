@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Submit));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -39,7 +40,10 @@
             this.Adresse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.codePostal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Ville = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.connectionButton = new System.Windows.Forms.Button();
+            this.minimizeBox = new System.Windows.Forms.PictureBox();
+            this.closBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.minimizeBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -129,29 +133,46 @@
             this.Ville.Text = "Ville";
             this.Ville.Width = 149;
             // 
-            // connectionButton
+            // minimizeBox
             // 
-            this.connectionButton.Location = new System.Drawing.Point(688, 22);
-            this.connectionButton.Name = "connectionButton";
-            this.connectionButton.Size = new System.Drawing.Size(75, 23);
-            this.connectionButton.TabIndex = 9;
-            this.connectionButton.Text = "Connexion";
-            this.connectionButton.UseVisualStyleBackColor = true;
+            this.minimizeBox.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBox.Image")));
+            this.minimizeBox.Location = new System.Drawing.Point(722, 12);
+            this.minimizeBox.Name = "minimizeBox";
+            this.minimizeBox.Size = new System.Drawing.Size(30, 30);
+            this.minimizeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minimizeBox.TabIndex = 17;
+            this.minimizeBox.TabStop = false;
+            this.minimizeBox.Click += new System.EventHandler(this.minimizeBox_Click);
+            // 
+            // closBox
+            // 
+            this.closBox.Image = ((System.Drawing.Image)(resources.GetObject("closBox.Image")));
+            this.closBox.Location = new System.Drawing.Point(758, 12);
+            this.closBox.Name = "closBox";
+            this.closBox.Size = new System.Drawing.Size(30, 30);
+            this.closBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closBox.TabIndex = 18;
+            this.closBox.TabStop = false;
+            this.closBox.Click += new System.EventHandler(this.closBox_Click);
             // 
             // Submit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.connectionButton);
+            this.ControlBox = false;
+            this.Controls.Add(this.closBox);
+            this.Controls.Add(this.minimizeBox);
             this.Controls.Add(this.listViewAuto);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Name = "Submit";
-            this.Text = "Liste Concessionaire";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Submit_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.minimizeBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,7 +190,8 @@
         private System.Windows.Forms.ColumnHeader codePostal;
         private System.Windows.Forms.ColumnHeader Ville;
         private System.Windows.Forms.ColumnHeader Adresse;
-        private System.Windows.Forms.Button connectionButton;
+        private System.Windows.Forms.PictureBox minimizeBox;
+        private System.Windows.Forms.PictureBox closBox;
     }
 }
 
