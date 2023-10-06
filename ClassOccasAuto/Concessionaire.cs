@@ -55,6 +55,8 @@ namespace ClassOccasAuto
 
         }
 
+
+
         public Concessionaire(int idConces, string nom, string prenom, string adresse, string codePostal, string ville)
         {
             IdConces = idConces;

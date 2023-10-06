@@ -22,7 +22,6 @@ namespace InscriptionForm
         public FormInscription()
         {
             InitializeComponent();
-
         }
 
 
@@ -92,10 +91,7 @@ namespace InscriptionForm
                 else
                 {
                     passwordTextBoxInscr.UseSystemPasswordChar = true;
-                }
-
-
-            
+                }  
         }
     }
 }
